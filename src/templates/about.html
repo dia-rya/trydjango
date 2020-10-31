@@ -1,0 +1,39 @@
+
+{% extends 'base.html' %}
+
+ {% block content %}
+
+<h1>About</h1>
+<h3> {{ title|capfirst }} </h3>
+<p>This is a template</p>
+
+
+{{my_html|striptags}} 
+
+<p>
+	{{ title }}, {{ my_number }}, {{my_list}}
+	<!--  passed through the keys value -->
+</p>
+
+
+
+<ul>
+	<li>Item 1</li>
+	<li>Item 2</li>
+</ul>
+
+<ul>
+{% for abc in my_list %}
+	{% if abc == 312 %}
+		<li>{{forloop.counter}} - {{abc|add:22}}</li>
+	{% elif abc == "aasd" %}
+		<li>This is not a network</li>
+	{% else %}
+		<li>{{forloop.counter}} - {{abc}}</li>
+
+	{% endif %}
+<!-- 	<li>{{forloop.counter}} - {{abc}}</li>
+ -->{% endfor %}
+</ul>
+
+{% endblock %}

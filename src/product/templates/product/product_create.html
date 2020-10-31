@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- this sexy send the form to admin database -->
+<form action='.' method='POST'> 
+<!-- This	<input type='text' name='title' placeholder="Your title"> equals to {form.as_p}-->
+	{% csrf_token %} {{form.as_p}}
+	<input type='submit' value='Save'/>
+</form>
+
+<!-- {{form.as_p}} -->
+
+<!-- this sexy search, on google if you may, but GET is an unsafe method to save -->
+<!-- <form action='http://google.com/search' method='GET'> 
+	<input type='text' name='q' placeholder="Your search">
+	<input type='submit' value='Search'/>
+</form> -->
+
+{% endblock %}
